@@ -6,7 +6,67 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <button ion-button (click)='nextPage()'>Next</button>
+<ion-grid>
+  <ion-row>
+    <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>
+    	<ion-icon name="calendar" class="white-icon"></ion-icon>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60>
+    	<span class="date-text white">Van</span>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>		  
+        	<ion-icon name="plane" class="white plane float-left"></ion-icon>
+	  	  <input type="text" text-left id="date-from" value="Zo, 11 Dec,2016" class="date-label float-left">
+	  	  <ion-icon name="arrow-dropdown" class="white"></ion-icon>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  
+  <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60>
+    	<span class="date-text white">Tot</span>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>		
+          <ion-icon name="plane" class="white turn plane float-left"></ion-icon>  
+	  	  <input type="text" text-left id="date-to" value="Za, 17 Dec,2016" class="date-label float-left">
+	  	  <ion-icon name="arrow-dropdown" class="white"></ion-icon>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  
+  <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>
+  		
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+
+   <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>
+  		<button ion-button class="ok-btn" (click)='nextPage()'>Ok</button>
+  		<button ion-button clear color="light" class="skip-btn">Sla over</button>  	
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>
+<script>
+alert('help');
+</script>

@@ -24054,6 +24054,17 @@ ion-content {
   border-bottom: 1px solid #2196F3;
 }
 
+.white {
+  color: #FFFFFF;
+}
+
+.turn {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  padding-left: 20px;
+  padding-right: 0 !important;
+}
+
 .celsius {
   color: #FFFFFF;
   font-size: 60px;
@@ -24068,4 +24079,28 @@ ion-content {
   font-size: 60px;
   font-weight: bold;
   border-bottom: 1px solid #2196F3;
+}
+
+.date-text {
+  width: 172px;
+  padding-left: 43px;
+}
+
+.plane {
+  font-size: 20px;
+  padding-right: 20px;
+}
+
+float-left {
+  float: left;
+}
+
+.date-label {
+  background-color: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  width: 150px;
+  border-bottom: 1px solid grey;
 }

@@ -54,12 +54,22 @@ ion-content{
 	border-bottom: 1px solid #2196F3;
 }
 
+.white{
+	color: color($colors,textColor);	
+}
+
+.turn{
+	 transform: rotate(180deg);
+	 padding-left:20px;
+	 padding-right: 0 !important;
+}
+
 .celsius{
 	color: color($colors,textColor);
 	font-size: 60px;
 }
 
-.ok-btn{
+.ok-btn{ 
 	width: 150px;
 }
 
@@ -69,3 +79,27 @@ ion-content{
 	font-weight: bold;	
 	border-bottom: 1px solid #2196F3;
 }
+
+.date-text{
+	width: 172px;
+	padding-left: 43px;
+}
+
+.plane{
+	font-size: 20px;
+	padding-right:20px;
+}
+
+float-left{
+	float:left;
+}
+
+.date-label{
+	background-color: transparent;
+	border: none;
+	color: color($colors,textColor);
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	font-size: 18px;
+	width:150px;
+	border-bottom: 1px solid grey;
+} 
