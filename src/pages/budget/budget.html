@@ -8,5 +8,28 @@
 
 
 <ion-content padding>
-  <button ion-button (click)='nextPage()'>Next</button>
+<ion-grid>
+  <ion-row>
+    <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>
+    	<ion-icon name="logo-usd" class="white-icon"></ion-icon>
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+  <ion-row>
+  <ion-col width-10></ion-col>
+    <ion-col width-80>
+    	<ion-input type="text" text-center value="300,00" class="budget-input"></ion-input>
+    </ion-col>
+    <ion-col width-10 class="celsius"></ion-col>
+  </ion-row>
+   <ion-row>
+  <ion-col width-20></ion-col>
+    <ion-col width-60 text-center>
+  		<button ion-button class="ok-btn" (click)='nextPage()'>Ok</button>
+  		<button ion-button clear color="light" class="skip-btn">Sla over</button>  	
+    </ion-col>
+    <ion-col width-20></ion-col>
+  </ion-row>
+</ion-grid>
 </ion-content>

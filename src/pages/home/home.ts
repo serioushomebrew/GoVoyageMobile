@@ -7,7 +7,9 @@ import { PeoplePage } from '../people/people';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+
+  }
 
   nextPage(){
   	this.navCtrl.push(PeoplePage, {}, {animate: true, direction:'forward', animation:'ios-transition'});
