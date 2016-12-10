@@ -26,7 +26,7 @@
   <ion-col width-20></ion-col>
     <ion-col width-60 text-center>		  
         	<ion-icon name="plane" class="white plane float-left"></ion-icon>
-	  	  <input type="text" text-left id="date-from" value="Zo, 11 Dec,2016" class="date-label float-left">
+	  	  <input type="text" text-left id="date-from" [value]="dateFromInput" class="date-label float-left" [(ngModel)]="dateFromInput" (click)='dateFrom($event)' ng-readonly="true" readonly="true">
 	  	  <ion-icon name="arrow-dropdown" class="white"></ion-icon>
     </ion-col>
     <ion-col width-20></ion-col>
@@ -43,7 +43,7 @@
   <ion-col width-20></ion-col>
     <ion-col width-60 text-center>		
           <ion-icon name="plane" class="white turn plane float-left"></ion-icon>  
-	  	  <input type="text" text-left id="date-to" value="Za, 17 Dec,2016" class="date-label float-left">
+	  	  <input type="text" text-left id="date-to" [value]="dateToInput" class="date-label float-left" [(ngModel)]="dateToInput" (click)='dateTo($event)' readonly="true" ng-readonly="true">
 	  	  <ion-icon name="arrow-dropdown" class="white"></ion-icon>
     </ion-col>
     <ion-col width-20></ion-col>
@@ -67,6 +67,3 @@
   </ion-row>
 </ion-grid>
 </ion-content>
-<script>
-alert('help');
-</script>
