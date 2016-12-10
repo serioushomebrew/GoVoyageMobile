@@ -1,22 +1,19 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { DatePage } from '../date/date';
 
-/*
-  Generated class for the Budget page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-budget',
   templateUrl: 'budget.html'
 })
 export class BudgetPage {
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController) {
+  	
+  }
 
-  ionViewDidLoad() {
-    console.log('Hello BudgetPage Page');
+  nextPage(){
+  	this.navCtrl.push(DatePage, {}, {animate: true, direction:'forward', animation:'ios-transition'});
   }
 
 }

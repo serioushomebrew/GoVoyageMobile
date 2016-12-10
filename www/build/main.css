@@ -24028,7 +24028,37 @@ ion-title {
   text-align: center;
 }
 
+.back-button {
+  color: #FFFFFF;
+}
+
 ion-content {
-  background-image: url("bg.png");
+  background-image: url("../assets/image/bg.png");
   background-size: cover;
+}
+
+.center {
+  text-align: center;
+}
+
+.white-icon {
+  padding-top: 60px;
+  font-size: 190px;
+  color: #FFFFFF;
+}
+
+.big-input {
+  color: #FFFFFF;
+  font-size: 90px;
+  font-weight: bold;
+  border-bottom: 1px solid #2196F3;
+}
+
+.celsius {
+  color: #FFFFFF;
+  font-size: 60px;
+}
+
+.ok-btn {
+  width: 150px;
 }
