@@ -12,4 +12,12 @@ export class HomePage {
     
   }
 
+  nextPage(click,clack){
+  	console.log(click);
+  	console.log(clack);
+  }
+
+
+
+
 }
