@@ -1,3 +1,149 @@
-page-results {
+.card-background-page {
+
+  ion-card {
+    position: relative;
+    text-align: center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;    
+    height:350px;
+  }
+
+  .card-weather-icon{
+    position: absolute;
+    top: 20px;
+    right: 55px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-weather-temp{
+    position: absolute;
+    top: 28px;
+    right: 15px;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-date-from{
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-date-from-year{
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #c3c3c3;
+  }
+
+  .card-date-to{
+    position: absolute;
+    top: 75px;
+    left: 60px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-date-to-year{
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #c3c3c3;
+  }
+
+  .card-plane-to{
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    font-size: 2.0em;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-plane-from{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2.0em;
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-title {
+    position: absolute;
+    bottom: 70px;
+    left: 20px;
+    font-size: 2.0em;    
+    font-weight: normal;
+    color: #fff;
+  }
+
+  .card-price {
+    position: absolute;
+    bottom: 70px;
+    right: 15px;
+    font-size: 2.0em;    
+    font-weight: normal;
+    color: #fff;
+  }
+
+  .card-book{
+    position:absolute;
+    bottom: 5px;
+    left:5px;
+    font-weight: bold;
+
+    .button-inner {
+      text-transform:capitalize;
+    }
+  }
+
+  .card-info{
+    position:absolute;
+    font-weight: bold;
+    bottom: 5px;
+    left: 100px;
+
+    .button-inner {
+      text-transform:capitalize;
+      color: #838383;
+    }
+  }
+
+  .card-share{
+
+    position:absolute;    
+    bottom: 6px;
+    right: 50px;
+
+    .button-inner {
+      color: #838383;
+    }
+  }
+
+  .card-heart{
+
+    position:absolute;    
+    bottom: 6px;
+    right: 5px;    
+
+    .button-inner {
+      color: #838383;
+    }
+  }
 
 }
