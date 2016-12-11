@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+
+import 'rxjs/Rx';
+import 'rxjs/add/operator/map';
 
 /*
   Generated class for the Results page.
@@ -13,36 +16,42 @@ import { Http } from '@angular/http';
   templateUrl: 'results.html'
 })
 export class ResultsPage {
-	data: any;
+    posts: any;
   constructor(public navCtrl: NavController, public http: Http) {
+      
 
-  		this.data = {};
-        this.data.username = '';
-        this.data.response = '';
+        var base ='https://govoyage.nl/api/searchflights';
 
-		var base ='https://govoyage.nl/api/searchflights';
-		
-		var postdata = {
-			start : '10-12-2016',
-			end : '28-12-2016',
-			budget : '600',
-			passengers : '2',
-			temperature : '15',
-		}
-		
-		this.http.post(base, postdata)
-	        .subscribe(data => {
-	            console.log(data);
-	            console.log(typeof data);
-	            
-	        }, error => {
-	            console.log(JSON.stringify(error.json()));
-	        });
-	  }
+        var postdata = {
+            start : '01-01-2017',
+            budget : '300',
+            passengers : '1',
+            temperature : 15,
+        };
 
-  ionViewDidLoad() {
-	
-  }	    
+    this.http.post(base, postdata).map((res: Response) => res.json())
+    .subscribe(xdata => {
+      console.log('TEST 1', xdata);
+      // let json = JSON.parse(xdata);
+
+
+
+      this.posts = xdata.sort(this.compare);
+      console.log(this.posts);
+      
+    }, error => {
+      console.log('TEST 2', error);
+    });
+
+  }
+
+  compare(a,b) {
+  if (a.pricing.price < b.pricing.price)
+    return -1;
+  if (a.pricing.price > b.pricing.price)
+    return 1;
+  return 0;
+}
 
 
 }
