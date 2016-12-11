@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,NavParams } from 'ionic-angular';
 import { BudgetPage } from '../budget/budget';
 /*
   Generated class for the People page.
@@ -12,11 +12,16 @@ import { BudgetPage } from '../budget/budget';
   templateUrl: 'people.html'
 })
 export class PeoplePage {
-
-  constructor(public navCtrl: NavController) {}
+	temp: any;
+	people: any;
+  constructor(public navParams: NavParams, public navCtrl: NavController) {
+  	this.temp = navParams.get('temp');
+  	this.people = 1;
+  	console.log(this.temp);
+  }
 
   nextPage(){
-  	this.navCtrl.push(BudgetPage, {}, {animate: true, direction:'forward', animation:'ios-transition'});
+  	this.navCtrl.push(BudgetPage, { temp: this.temp, people: this.people}, {animate: true, direction:'forward', animation:'ios-transition'});
   }
 
 }

@@ -18,7 +18,7 @@
   <ion-row>
   <ion-col width-20></ion-col>
     <ion-col width-60>
-    	<ion-input type="number" text-center value="15" class="big-input"></ion-input>
+    	<ion-input type="number" text-center class="big-input" [value]="temp" [(ngModel)]="temp"></ion-input>
     </ion-col>
     <ion-col width-20 class="celsius">°</ion-col>
   </ion-row>

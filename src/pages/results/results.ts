@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { Http, Response } from '@angular/http';
 
 import 'rxjs/Rx';
@@ -17,8 +17,21 @@ import 'rxjs/add/operator/map';
 })
 export class ResultsPage {
     posts: any;
-  constructor(public navCtrl: NavController, public http: Http) {
-      
+    temp: any;
+    people: any;
+    budget: any;
+    dateFrom: any;
+    dateTo: any;
+  constructor(public navCtrl: NavController, public http: Http, public navParams: NavParams) {
+
+      this.temp = navParams.get('temp');     
+      this.dateFrom = navParams.get('dateFrom');
+      this.dateTo = navParams.get('dateTo');      
+      this.people = navParams.get('people');
+      this.budget = navParams.get('budget');
+
+      console.log('searching where '+this.temp+' degrees, for '+this.people+' people, budget is '+this.budget);
+      console.log('from '+this.dateFrom+' to '+this.dateTo);
 
         var base ='https://govoyage.nl/api/searchflights';
 

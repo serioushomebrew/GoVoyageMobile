@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { ResultsPage } from '../results/results';
 import { DatePicker } from 'ionic-native';
 
@@ -17,10 +17,19 @@ import { DatePicker } from 'ionic-native';
 export class DatePage {
 	dateToInput:any;
 	dateFromInput:any;	
-
-  constructor(public navCtrl: NavController) {
+	temp: any;
+	people: any;
+	budget: any;
+	dateFromValue: any;
+	dateToValue: any;
+  constructor(public navCtrl: NavController, public navParams : NavParams) {
   	this.dateFromInput = 'Zo, 11 Dec,2016';
   	this.dateToInput = 'Za, 17 Dec, 2016';
+  	this.dateFromValue = '11-12-2016';
+  	this.dateToValue = '17-12-2016';
+  	this.temp = navParams.get('temp');
+	this.people = navParams.get('people');
+	this.budget = navParams.get('budget');
   }
 
   dateTo(event: Event){
@@ -37,12 +46,15 @@ export class DatePage {
 	  	var splitter = date.toLocaleDateString('nl-NL', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' }); // Wed Dec 14 2016	  	
 
 	  	var boom = splitter.split(' ');
-	  	console.log(boom);
 	  	var day = this.ucfirst(boom[0]);
 	  	var month = this.ucfirst(boom[2].slice(0,-1));
 	  	var dat = this.ucfirst(boom[1]);
 	  	var year = this.ucfirst(boom[3]);
+	  	var dateMonth = date.getMonth() + 1;
+
   		this.dateToInput = day+', '+dat+' '+month+', '+year;
+  		this.dateFromValue = date.getDate()+'-'+dateMonth+'-'+date.getFullYear();
+
 	  },
 	  err => console.log('Error occurred while getting date: ', err)
 	);
@@ -67,7 +79,9 @@ export class DatePage {
 	  	var month = this.ucfirst(boom[2].slice(0,-1));
 	  	var dat = this.ucfirst(boom[1]);
 	  	var year = this.ucfirst(boom[3]);
+	  	var dateMonth = date.getMonth() + 1;
   		this.dateFromInput = day+', '+dat+' '+month+', '+year;
+  		this.dateFromValue = date.getDate()+'-'+dateMonth+'-'+date.getFullYear();
 	  },
 	  err => console.log('Error occurred while getting date: ', err)
 	);
@@ -79,7 +93,13 @@ export class DatePage {
 }
 
   nextPage(){
-  	this.navCtrl.push(ResultsPage, {}, {animate: true, direction:'forward', animation:'ios-transition'});
+  	this.navCtrl.push(ResultsPage, {
+  		temp: this.temp,
+  		people: this.people,
+  		budget: this.budget,
+  		dateFrom : this.dateFromValue,
+  		dateTo : this.dateToValue
+  	}, {animate: true, direction:'forward', animation:'ios-transition'});
   }
 
 }

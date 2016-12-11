@@ -7,11 +7,14 @@ import { PeoplePage } from '../people/people';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController) {
 
+	temp : any;
+
+  constructor(public navCtrl: NavController) {
+  	this.temp = 15;
   }
 
   nextPage(){
-  	this.navCtrl.push(PeoplePage, {}, {animate: true, direction:'forward', animation:'ios-transition'});
+  	this.navCtrl.push(PeoplePage, {temp : this.temp}, {animate: true, direction:'forward', animation:'ios-transition'});
   }
 }
