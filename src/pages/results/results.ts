@@ -36,10 +36,10 @@ export class ResultsPage {
         var base ='https://govoyage.nl/api/searchflights';
 
         var postdata = {
-            start : '01-01-2017',
-            budget : '300',
-            passengers : '1',
-            temperature : 15,
+            start : this.dateFrom,
+            budget : this.budget.replace(',','.'),
+            passengers : this.people,
+            temperature : this.temp,
         };
 
     this.http.post(base, postdata).map((res: Response) => res.json())
