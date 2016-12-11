@@ -24112,6 +24112,11 @@ float-left {
   height: 350px;
 }
 
+.card-background-page ion-card img {
+  width: 394px;
+  height: 294px;
+}
+
 .card-background-page .card-weather-icon {
   position: absolute;
   top: 20px;
